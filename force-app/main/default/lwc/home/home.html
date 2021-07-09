@@ -1,0 +1,20 @@
+<template>
+
+    <div class="c-container">
+
+        <div class="slds-m-around_medium">
+            <h1 class="slds-text-heading_large">COVID Vaccine Manager Portal</h1>
+            <h1 class="slds-text-heading_small">Begin by selecting your location</h1>
+        </div>
+        <div onkeyup={handleKeyUp}>
+            <lightning-input
+                name="enter-search"
+                label="Search Locations, hit 'enter' to search"
+                type="search"
+            ></lightning-input>
+        </div>
+        <p if:true={queryTerm}>
+            Searched for {queryTerm}!
+        </p>
+    </div>
+</template>

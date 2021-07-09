@@ -1,0 +1,24 @@
+<template>
+    <lightning-card  variant="Narrow"  title="COVID Vaccine Manager" icon-name="standard:account">
+        <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <div class=" slds-p-left_medium slds-p-right_medium">
+                <hr/>
+            </div>
+            
+        <!-- Badge: basic -->
+            <div class=" slds-p-left_medium slds-p-right_medium">
+                <lightning-button variant="base" label="Sessions & Search" title="Sessions Search" onclick={sessionsSearch} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="Generate Sessions" title="Generate Sessions" onclick={generateSessions} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="Review Queue" title="Review Queue" onclick={reviewQueue} class="slds-m-left_x-small"></lightning-button>
+
+                <lightning-button variant="base" label="Immunization Queue" title="Immunization Queue" onclick={immunizationQueue} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="SignOff Queue" title="SignOff Queue" onclick={signOffQueue} class="slds-m-left_x-small"></lightning-button>
+                
+            </div>
+        </div>        
+
+
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+</template>
