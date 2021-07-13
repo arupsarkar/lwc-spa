@@ -11,12 +11,16 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Custom_Location__c</field>
+                <behavior>Edit</behavior>
+                <field>Manufacturer__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Session_Name__c</field>
+                <field>Capacity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Sessions__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

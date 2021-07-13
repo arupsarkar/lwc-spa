@@ -153,14 +153,14 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Sessions</label>
+    <label>Session Details</label>
     <nameField>
-        <displayFormat>S-{00}</displayFormat>
-        <label>Sessions Name</label>
+        <displayFormat>SD-{00}</displayFormat>
+        <label>Session Details Name</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Sessions</pluralLabel>
+    <pluralLabel>Session Details</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

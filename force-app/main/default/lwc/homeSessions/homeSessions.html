@@ -1,3 +1,21 @@
 <template>
+    <lightning-card>
+        <div class = "slds-var-m-around_medium" if:false={showSessionsData}>
+            <c-home onlocationselected={locationSelected}></c-home>
+        </div>
+        <div class = "slds-var-m-around_medium" if:true={showSessionsData}>
+            <lightning-datatable
+                key-field="Id"
+                show-row-number-column="true"
+                hide-checkbox-column="true"
+                data={sessions}
+                columns={columns}
+                onrowaction={handleRowAction}
+            >
+            </lightning-datatable>
+        </div>        
+    </lightning-card>
+
+
     
 </template>

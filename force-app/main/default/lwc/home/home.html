@@ -2,19 +2,36 @@
 
     <div class="c-container">
 
-        <div class="slds-m-around_medium">
+        <div class="slds-var-m-around_medium">
             <h1 class="slds-text-heading_large">COVID Vaccine Manager Portal</h1>
             <h1 class="slds-text-heading_small">Begin by selecting your location</h1>
         </div>
-        <div onkeyup={handleKeyUp}>
+        <div class="slds-var-m-around_medium" onkeyup={handleKeyUp}>
             <lightning-input
                 name="enter-search"
                 label="Search Locations, hit 'enter' to search"
                 type="search"
             ></lightning-input>
         </div>
-        <p if:true={queryTerm}>
-            Searched for {queryTerm}!
-        </p>
+
+        <div class="slds-var-m-around_medium" if:true={queryTerm}>
+            <p>
+                Searched for {queryTerm}!
+            </p>
+        </div>
+
+
+
+        <div class="slds-var-m-around_medium" if:true={locations}>
+            <lightning-datatable
+                key-field="Id"
+                show-row-number-column="true"
+                hide-checkbox-column="true"
+                data={locations}
+                columns={columns}
+                onrowaction={handleRowAction}
+            >
+            </lightning-datatable>
+        </div>
     </div>
 </template>

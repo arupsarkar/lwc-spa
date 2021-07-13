@@ -152,16 +152,16 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Sessions</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Custom Location</label>
     <nameField>
-        <displayFormat>S-{00}</displayFormat>
-        <label>Sessions Name</label>
+        <displayFormat>CL-{00}</displayFormat>
+        <label>Custom Location Name</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Sessions</pluralLabel>
+    <pluralLabel>Custom Locations</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
