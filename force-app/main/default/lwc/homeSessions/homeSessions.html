@@ -3,16 +3,37 @@
         <div class = "slds-var-m-around_medium" if:false={showSessionsData}>
             <c-home onlocationselected={locationSelected}></c-home>
         </div>
+
+
+
         <div class = "slds-var-m-around_medium" if:true={showSessionsData}>
-            <lightning-datatable
-                key-field="Id"
-                show-row-number-column="true"
-                hide-checkbox-column="true"
-                data={sessions}
-                columns={columns}
-                onrowaction={handleRowAction}
-            >
-            </lightning-datatable>
+            <div class="slds-var-m-around_medium">
+                <h1 class="slds-text-heading_large">SPA LWC App</h1>
+                <h1 class="slds-text-heading_small">Select a seesion for details</h1>
+            </div>        
+
+            <div class=" slds-var-p-left_medium slds-var-p-right_medium">
+                <lightning-button variant="base" label="Sessions & Search" title="Sessions Search" onclick={sessionsSearch} class="slds-var-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="Generate Sessions" title="Generate Sessions" onclick={generateSessions} class="slds-var-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="Review Queue" title="Review Queue" onclick={reviewQueue} class="slds-var-m-left_x-small"></lightning-button>
+
+                <lightning-button variant="base" label="Immunization Queue" title="Immunization Queue" onclick={immunizationQueue} class="slds-var-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="SignOff Queue" title="SignOff Queue" onclick={signOffQueue} class="slds-var-m-left_x-small"></lightning-button>
+                
+            </div>            
+
+            <div class="slds-var-p-top_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    show-row-number-column="true"
+                    hide-checkbox-column="true"
+                    data={sessions}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                >
+                </lightning-datatable>
+            </div>            
+
         </div>        
     </lightning-card>
 

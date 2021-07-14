@@ -1,5 +1,9 @@
-import { LightningElement, track } from 'lwc'
+import { LightningElement, track, wire } from 'lwc'
 import getLocations from '@salesforce/apex/LocationsController.getLocations'
+
+// Import message service features required for publishing and the message channel
+import { publish, MessageContext } from 'lightning/messageService';
+import locationSelected from '@salesforce/messageChannel/Location_Selected__c'
 
 const actions = [
     {label: 'Show Details', name: 'show_details'},
@@ -17,6 +21,9 @@ export default class Home extends LightningElement {
     columns = columns
     locations = {}
     @track errorMsg
+
+    @wire(MessageContext)
+    messageContext;
 
     handleKeyUp(evt) {
         console.log('---> search value ', evt.target.value)
@@ -43,6 +50,11 @@ export default class Home extends LightningElement {
         const row = event.detail.row
         console.log('---> action name : ', actionName)
         console.log('---> location data', row)
+
+        //publish location selected message
+        console.log('---> publishing location selected message with data - Start', row)
+        publish(this.messageContext, locationSelected, row)
+        console.log('---> publishing location selected message with data - End', row)
         // create the event
         const selectedEvent = new CustomEvent('locationselected', {detail: row})
         // dispatch the event

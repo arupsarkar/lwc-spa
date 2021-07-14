@@ -1,7 +1,16 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire} from 'lwc';
 import { NavigationMixin } from 'lightning/navigation'
 import getSessions from '@salesforce/apex/SessionsController.getSessions';
 
+import getSessionDetails from '@salesforce/apex/SessionDetailsController.getSessionDetails';
+import {
+    publish,
+    subscribe,
+    unsubscribe,
+    APPLICATION_SCOPE,
+    MessageContext
+} from 'lightning/messageService';
+import locationSelected from '@salesforce/messageChannel/Location_Selected__c';
 
 const actions = [
     {label: 'Show Details', name: 'show_details'},
@@ -24,9 +33,15 @@ export default class HomeSessions extends NavigationMixin(LightningElement)  {
     showSessionsData = false
     columns = columns
 
+    // To pass scope, you must get a message context.
+    @wire(MessageContext)
+    messageContext;    
+
     connectedCallback() {
         console.log('---> connected callback() ', ' start')
+        this.subscribeToMessageChannel()
         console.log('---> connected callback() ', ' end ')
+
     }
 
     locationSelected(event) {
@@ -34,6 +49,7 @@ export default class HomeSessions extends NavigationMixin(LightningElement)  {
         console.log('---> location selected: Location__c', event.detail.Location__c)
         console.log('---> location selected: Id', event.detail.Id)
         this.getData(event.detail.Id)
+        
         //this.navigateToDetails()
     }
 
@@ -87,6 +103,26 @@ export default class HomeSessions extends NavigationMixin(LightningElement)  {
             console.log('---> navigate to details page', this.sessionId)
             this.navigateToDetails()
         }
-    }    
+    }
+    
+    // Pass scope to the subscribe() method.
+    subscribeToMessageChannel() {
+        if (!this.subscription) {
+            this.subscription = subscribe(
+                this.messageContext,
+                locationSelected,
+                (message) => {
+                    console.log('---> subscribing to location selected message', 'start')
+                    this.handleMessage(message)
+                    console.log('---> subscribing to location selected message', 'end')
+                },
+                { scope: APPLICATION_SCOPE }
+            );
+        }
+    }
+    // Handler for message received by component
+    handleMessage(message) {
+        console.log('---> location message received in home session component', message)
+    }        
 
 }

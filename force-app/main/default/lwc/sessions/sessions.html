@@ -1,10 +1,15 @@
 <template>
     <div class="c-container">
+
         <lightning-card>
             <div class="slds-var-m-around_medium" if:true={sessionDetails}>
+                <h1>
+                    Session Details !!!
+                </h1>
+                <hr/>
+
                 <p>{sessionId}</p>
                 <p>{sessionName}</p>
-                <p>{session}</p>
                 <p>{manufacturer}</p>
                 <p>{capacity}</p>
             </div>
