@@ -1,0 +1,23 @@
+<template>
+    
+    <lightning-card>
+        <div class="c-container">
+                <div class="slds-var-p-top_medium">
+                    <lightning-card>
+                        <div class="slds-var-p-top_medium" if:true={showSessionsData}>
+                            <p>Session details for location {locationName} </p>
+                            <lightning-datatable
+                                key-field="Id"
+                                show-row-number-column="true"
+                                hide-checkbox-column="true"
+                                data={sessions}
+                                columns={columns}
+                                onrowaction={handleRowAction}
+                            >
+                            </lightning-datatable>
+                        </div>  
+                    </lightning-card>
+                </div>
+        </div>
+    </lightning-card>
+</template>

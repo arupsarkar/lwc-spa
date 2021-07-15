@@ -1,0 +1,46 @@
+<template>
+    <div class="c-container">
+        <lightning-card>
+            <div class="slds-var-m-around_medium">
+                <h1>
+                    Dynamic Component Rendering !!!
+                </h1>
+            </div>
+
+            <!-- <div class=" slds-var-p-left_medium slds-var-p-right_medium">
+                <lightning-button variant="base" label="Locations" title="Locations" onclick={showLocations} class="slds-var-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="Sessions" title="Sessions" onclick={showLocationSessions} class="slds-var-m-left_x-small"></lightning-button>
+                <lightning-button variant="base" label="Session Details" title="Session Details" onclick={showSessionDetails} class="slds-var-m-left_x-small"></lightning-button>
+            </div>     -->
+            
+
+            <lightning-accordion class="example-accordion"
+                onsectiontoggle={handleToggleSection}
+                active-section-name="Locations">
+
+                <lightning-accordion-section name="Locations" label="Locations">
+                    <div class="slds-var-p-left_medium slds-var-p-right_medium">
+                        <c-home></c-home>
+                        <!-- <div class="slds-var-p-left_medium slds-var-p-right_medium">
+                            <lightning-button variant="brand" label="Continue" title="Primary action" onclick={publishMessage} class="slds-var-m-left_x-small"></lightning-button>
+                        </div> -->
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Sessions" label="Sessions">
+                    <div class=" slds-var-p-left_medium slds-var-p-right_medium">
+                        <c-location-sessions></c-location-sessions>
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="SessionDetails" label="Session Details">
+                    <div class=" slds-var-p-left_medium slds-var-p-right_medium">
+                        <c-sessions></c-sessions>
+                    </div> 
+                </lightning-accordion-section>
+                           
+
+            </lightning-accordion>            
+
+        </lightning-card>
+    </div>
+
+</template>

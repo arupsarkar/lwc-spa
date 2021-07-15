@@ -38,9 +38,9 @@ export default class HomeSessions extends NavigationMixin(LightningElement)  {
     messageContext;    
 
     connectedCallback() {
-        console.log('---> connected callback() ', ' start')
-        this.subscribeToMessageChannel()
-        console.log('---> connected callback() ', ' end ')
+        console.log('---> home session connected callback() ', ' start')
+        //this.subscribeToMessageChannel()
+        console.log('---> home session connected callback() ', ' end ')
 
     }
 
