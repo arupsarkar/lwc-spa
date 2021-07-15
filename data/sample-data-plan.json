@@ -1,6 +1,7 @@
 [
     {
       "sobject": "Custom_Location__c",
+      "saveRefs": true,
       "files": [
         "Custom_Location__c.json"
       ]
