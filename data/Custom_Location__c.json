@@ -1,0 +1,36 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Custom_Location__c",
+                "referenceId": "Custom_Location__cRef1"
+            },
+            "Name": "CL-04",
+            "Location__c": "Site Location 4"
+        },
+        {
+            "attributes": {
+                "type": "Custom_Location__c",
+                "referenceId": "Custom_Location__cRef2"
+            },
+            "Name": "CL-01",
+            "Location__c": "Site Location 1"
+        },
+        {
+            "attributes": {
+                "type": "Custom_Location__c",
+                "referenceId": "Custom_Location__cRef3"
+            },
+            "Name": "CL-03",
+            "Location__c": "Site Location 3"
+        },
+        {
+            "attributes": {
+                "type": "Custom_Location__c",
+                "referenceId": "Custom_Location__cRef4"
+            },
+            "Name": "CL-02",
+            "Location__c": "Site Location 2"
+        }
+    ]
+}
